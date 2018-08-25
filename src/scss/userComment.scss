@@ -1,0 +1,20 @@
+.userCommentDiv{
+    display: flex;
+    align-self: stretch;
+    img{
+        border-radius: 9px;
+        padding: 6px;
+    }
+    .userEmail, .userMsg{
+        padding-left: 12px;
+    }
+    .userEmail{
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 8px;
+    }
+    .userMsg{
+        font-size: 15px;
+        margin-top: 5px;
+    }
+}

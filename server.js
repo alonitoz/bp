@@ -1,10 +1,28 @@
+const path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');  
 const routes = require('./routes');
 const initDB = require('./db');
-let app = express();
+
+const app = express();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(express.static(path.resolve(__dirname, 'public')));
+
+if (process.env.NODE_ENV === 'development') {
+    const webpack = require('webpack');
+    const webpackConfig = require('./webpack/webpack.config');
+    const compiler = webpack(webpackConfig);
+
+    app.use(
+        require('webpack-dev-middleware')(compiler, {
+            publicPath: webpackConfig.output.publicPath
+        })
+    );
+    app.use(require("webpack-hot-middleware")(compiler));
+}
 
 app.use(routes);
 
@@ -15,5 +33,4 @@ initDB().then(() => {
     });
 }).catch(ex => {
     throw ex;
-});
-
+})

@@ -1,0 +1,50 @@
+.formContainer{
+    font-size: 25px;
+    background-color: #EFEFEF;
+    height: 50%;
+    width: 100%;
+    form{
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        input, textarea{
+            padding-left: 13px;
+        }
+        textarea{
+            width: 90%;
+            height: 40%;
+            font-size: 17px;    
+        }
+        #btnSection{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            #errSpan{
+                color: red;
+                font-size: 15px;
+                line-height: 2;
+                width: 70%;
+            }
+        }
+        button{
+            border-radius: 4px;
+            background-color: #46A9DD;
+            color: white;
+            border: 1px solid white;
+            padding:8px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: white;
+            color:  #46A9DD;
+            border: 1px solid  #46A9DD;
+        }
+
+    
+
+    }
+}

@@ -1,0 +1,32 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", "Open Sans", "Open Sans Hebrew", Helvetica, Helvetica neue, Arial, sans-serif !important;
+    font-size: 13px;
+    height:100vh;
+}
+
+#app{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea{
+    font-family: inherit;
+    padding: 8px;
+}
